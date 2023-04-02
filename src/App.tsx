@@ -1,6 +1,25 @@
 import { defineComponent, ref } from "vue";
+import { RouterView } from "vue-router";
 export const App = defineComponent({
   setup() {
-    return () => <div>h111</div>;
+    return () => (
+      <>
+        <header>
+          导航
+          <ul>
+            <li>
+              <router-link to="./">Foo</router-link>
+            </li>
+            <li>
+              <router-link to="/bar">Bar</router-link>
+            </li>
+          </ul>
+        </header>
+        <div>
+          <RouterView />
+        </div>
+        <footer>底部</footer>
+      </>
+    );
   },
 });
